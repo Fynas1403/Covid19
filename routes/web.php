@@ -1,5 +1,6 @@
 <?php
-
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,3 +57,15 @@ Route::get('/data_petugas',"Petugas@index");
 Route::post('/tambah_petugas/store',"Petugas@store") ->name('petugas.store');
 
 Route::get('/petugas/hapus/{id}',"Petugas@hapus");
+
+Route::get('/petugas/edit/{id}',"Petugas@edit");
+
+Route::get('/petugas_edit',"Petugas@edit");
+
+Route::post('/petugas/update',"Petugas@update")-> name('petugas.update');
+
+Route::get('/data_masyarakat',"Petugas@data_masyarakat");
+
+Route::post('/tambah_masyarakat/store',"Petugas@masyarakat_store") ->name('Petugas.masyarakat_store');
+
+Route::get('/data_masyarakat/hapus/{id}',"Petugas@hapus_masyarakat");

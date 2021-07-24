@@ -12,6 +12,7 @@ class Masyarakat extends Controller
 {
     public function index_masyarakat()
     {
+
       $data['datas']=ModelMasyarakat::all();
       return view('login_masyarakat',$data);
     }
