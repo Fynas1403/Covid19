@@ -61,7 +61,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               @if(Session()->has('nama'))   
-              <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.png" class="img-circle" width="60"></a></p>
+              <p class="centered"><a href="/covid19/public/masyarakat"><img src="assets/img/ui-sam.png" class="img-circle" width="60"></a></p>
                     <h5 class="centered">{{Session()->get('nama')}}</h5>
             @endif
             

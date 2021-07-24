@@ -45,7 +45,7 @@
             
             <div class="top-menu">
             <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="{{url('/logout_masyarakat')}}"
+                    <li><a class="logout" href="{{url('/logout_petugas')}}"
                     onclick="return confirm('Apakah anda yakin?')">Logout</a></li>
             	</ul>
             </div>
@@ -60,44 +60,66 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              @if(Session()->has('nama'))   
-              <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.png" class="img-circle" width="60"></a></p>
-                    <h5 class="centered">{{Session()->get('nama')}}</h5>
+              @if(Session()->has('nama_petugas'))   
+              <p class="centered"><a href="/covid19/public/petugas"><img src="assets/img/ui-sam.png" class="img-circle" width="60"></a></p>
+                    <h5 class="centered">{{Session()->get('nama_petugas')}}</h5>
             @endif
             
+            @if(Session::get('level')=='admin')
 <center>
-<span>Anda Login Sebagai Masyarakat</span>
+<span>Anda Login Sebagai Admin</span>
 </center>
-
 <li >
-    <a href="/covid19/public/masyarakat">
+    <a href="/covid19/public/petugas">
     <i class="fa fa-home"></i>
 <span>Dashboard</span>
 </a>
-<li class="sub-menu"  >
-                      <a href="javascript:;" >
-                          <i class="fa fa-chart-bar"></i>
-                          <span>Statistik Covid-19</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="/pengaduan-masyarakat/public/#">Data Covid-19 di Indonesia</a></li>
-                          <li><a  href="/pengaduan-masyarakat/public/#">Data Covid-19 Setiap Daerah</a></li>
-                      </ul>
-                  </li>
+
 <li >
-    <a href="/covid19/public/#">
-    <i class="fa fa-hospital-alt"></i>
-<span>Rumah Sakit Rujukan</span>
-</a>
-</li>
-<li >
-    <a href="/covid19/public/#">
+    <a href="/covid19/public/daftar_pasien">
     <i class="fa fa-id-card"></i>
-<span>Daftar Vaksinasi Covid-19</span>
+<span>Daftar Pasien Vaksinasi Covid-19</span>
 </a>
+
+<li class="sub-menu">
+  <a href="javascript:;" >
+  <i class="fa fa-user-circle"></i>
+      <span>Data Pengguna</span>
+  </a>
+  <ul class="sub">
+      <li ><a  href="/covid19/public/data_petugas">Data Petugas</a></li>
+      <li ><a  href="/covid19/public/data_masyarakat">Data Masyarakat</a></li>
+  </ul>
 </li>
-          
-</ul>
+@endif
+
+@if(Session::get('level')=='petugas')
+<center>
+<span>Anda Login Sebagai Petugas</span>
+</center>
+<li >
+    <a href="/covid19/public/petugas">
+    <i class="fa fa-home"></i>
+<span>Dashboard</span>
+</a>
+
+<li >
+    <a href="/covid19/public/daftar_pasien">
+    <i class="fa fa-id-card"></i>
+<span>Daftar Pasien Vaksinasi Covid-19</span>
+</a>
+
+<li class="sub-menu">
+  <a href="javascript:;" >
+  <i class="fa fa-user-circle"></i>
+      <span>Data Pengguna</span>
+  </a>
+  <ul class="sub">
+      <li ><a  href="/covid19/public/data_petugas">Data Petugas</a></li>
+      <li ><a  href="/covid19/public/data_masyarakat">Data Masyarakat</a></li>
+  </ul>
+</li>
+@endif
 
           </div>
       </aside>

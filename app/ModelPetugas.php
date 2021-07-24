@@ -4,19 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ModelVaksin extends Model
+class ModelPetugas extends Model
 {
-    protected $table="daftar_vaksin";
+    protected $table="petugas";
     //default primary key adalah id
-    protected $primarykey="id_vaksin";
+    protected $primarykey="id_petugas";
     //untuk mematikan pengotomatisan insert kolom update at
     public $timestamps=false;
 
     protected $fillable = [
-      'id_vaksin',
-      'nik',
-      'tgl_vaksin',
-      'jenis_vaksin',
-      'vaksin_ke'
+      'id_petugas',
+      'nama_petugas',
+      'username',
+      'password',
+      'telp',
+      'level'
     ];
 }

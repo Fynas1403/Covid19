@@ -31,7 +31,7 @@ class Masyarakat extends Controller
             'username' => $request->username,
             'password' => md5($request->password)
         ]);
-        return redirect()->action('Masyarakat@index_masyarakat')->with('alert_message', 'Berhasil Mendaftar, Silahkan Login!');;
+        return redirect()->action('Masyarakat@index_masyarakat')->with('alert_message', 'Berhasil Mendaftar, Silahkan Login!');
     }
 
     public function edit($id)
