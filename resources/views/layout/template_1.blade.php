@@ -104,6 +104,12 @@
 </a>
 
 <li >
+    <a href="/covid19/public/rumah">
+    <i class="fa fa-id-card"></i>
+<span>Daftar Rumah Sakit Rujukan</span>
+</a>
+
+<li >
     <a href="/covid19/public/daftar_pasien">
     <i class="fa fa-id-card"></i>
 <span>Daftar Pasien Vaksinasi Covid-19</span>
